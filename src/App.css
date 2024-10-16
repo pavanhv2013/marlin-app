@@ -1,0 +1,274 @@
+/* General Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; /* Ensure space between logo and other items */
+  align-items: center; /* Vertically center items */
+  height: 80px;
+  background-color: #0046c8;
+  padding: 0 20px; /* Add padding to make elements not touch the edges */
+  border: 2px solid #e7e7e7;
+  border-bottom: 1px solid #000;
+  box-shadow: 0 0px rgba(0, 0, 0, 0.9);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.fonty {
+  font-family: italic;
+  color: white;
+  font-weight: bold;
+}
+
+.profile-photo {
+  border-radius: 20%;
+}
+
+.main-content {
+  display: flex;
+  flex-grow: 1;
+  background-color: #f8f9fa;
+}
+
+/* Footer Styling */
+.footer {
+  display: flex;
+  height: 50px;
+  background-color: #87CEEB;
+  color: black;
+  align-items: center; /* Correct case */
+  justify-content: center; /* Correct case */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  border-top: 1px solid #000;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: #0046c8;
+  color: #0046c8;
+  transition: width 0.3s ease;
+  height: 100%;
+  background: #0046c8;
+}
+
+.sidebar.expanded {
+  width: 220px;
+  background-color: #0046c8;
+}
+
+.sidebar.collapsed {
+  width: 50px;
+  background-color: #0046c8;
+}
+
+.toggle-button {
+  margin: 10px;
+  background-color: #0046c8;
+}
+
+.toggle-button:hover {
+  background-color: #0046c8;
+}
+
+.p-panelmenu .p-panelmenu-header .p-panelmenu-header-content {
+  border: 1px solid #dee2e6;
+  color: #495057;
+  background: #0046c8;
+  border-radius: 3px;
+  transition: box-shadow 0.2s;
+}
+
+.p-panelmenu .p-panelmenu-header .p-panelmenu-header-content .p-panelmenu-header-link {
+  color: #ffffff;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+/* Main Content Area Styling */
+.content-area {
+  flex-grow: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+/* When the Sidebar is Expanded */
+.content-area.expanded {
+  margin-left: 200px;
+}
+
+/* When the Sidebar is Collapsed */
+.content-area.collapsed {
+  margin-left: 60px;
+}
+
+.addbutton {
+  border-radius: 20px;
+}
+
+/* Dashboard CSS */
+.dashboard {
+  padding: 20px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-container {
+  display: flex;
+  gap: 10px;
+  justify-content: space-evenly;
+}
+
+.dashboard-card {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: black;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-count {
+  background-color: rgb(33, 150, 243);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 20px;
+  color: white;
+}
+
+/* Members Info */
+.package-dashboard {
+  padding: 20px;
+  background-color: #f7d488; /* Light yellow background */
+}
+
+.message-card {
+  background-color: #5a9bd4;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.info-card {
+  flex: 1;
+  background-color: #5a9bd4;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.card-content {
+  font-size: 18px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 180px; /* Slightly narrower sidebar for large tablets */
+  }
+
+  .content-area.expanded {
+    margin-left: 180px; /* Adjust margin when sidebar is expanded */
+  }
+
+  .content-area.collapsed {
+    margin-left: 50px; /* Adjust margin when sidebar is collapsed */
+  }
+}
+
+@media (max-width: 992px) { /* Tablet size */
+  .header {
+    flex-direction: column; /* Stack header items vertically */
+    height: auto; /* Allow height to adjust */
+  }
+
+  .main-content {
+    flex-direction: column; /* Stack main content items vertically */
+  }
+
+  .card-container {
+    flex-direction: column; /* Stack cards vertically */
+  }
+
+  .dashboard-card {
+    flex: none; /* Reset flex behavior to allow cards to grow */
+    width: 100%; /* Full width for cards */
+  }
+}
+
+@media (max-width: 768px) { /* Smartphone size */
+  .header {
+    padding: 10px; /* Less padding on smaller screens */
+  }
+
+  .sidebar {
+    width: 100%; /* Full width sidebar */
+    height: auto; /* Allow height to adjust */
+  }
+
+  .content-area {
+    padding: 10px; /* Less padding in content area */
+  }
+
+  .footer {
+    font-size: 14px; /* Smaller font size for footer */
+  }
+
+  .dashboard-card {
+    padding: 15px; /* Adjust padding for cards */
+  }
+
+  .card-count {
+    width: 30px; /* Smaller count circle */
+    height: 30px; /* Smaller count circle */
+    font-size: 16px; /* Smaller font size */
+  }
+}
+.company-logo {
+  max-width: 120px; /* Adjust the maximum width of the logo */
+  width: 100%; /* Ensure it scales responsively */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Centers the logo if its parent has a defined width */
+  margin: 0 auto; /* Center the logo horizontally */
+  opacity: 0.7; /* Set transparency (0 is fully transparent, 1 is fully opaque) */
+}
+
+/* Optional: Add hover effects */
+.company-logo:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
